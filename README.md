@@ -11,7 +11,7 @@ and even generates an audio summary sent directly to Telegram.
       <img src="simple-architecture.png" width="400">
     </td>
     <td>
-      <img src="workflow-screenshot.png" width="400">
+      <img src="workflow-screenshot.jpg" width="400">
     </td>
   </tr>
 </table>
