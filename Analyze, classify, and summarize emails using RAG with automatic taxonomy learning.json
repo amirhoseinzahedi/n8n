@@ -1,0 +1,1135 @@
+{
+  "nodes": [
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4.1-mini"
+        },
+        "builtInTools": {},
+        "options": {
+          "frequencyPenalty": 0,
+          "temperature": 0.7,
+          "topP": 1
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        -672,
+        160
+      ],
+      "id": "8f65edfe-f7a0-4714-b22e-53532cb87870",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "PsddRNyQpDLO5nLr",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "filters": {}
+      },
+      "type": "n8n-nodes-base.gmailTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        -1328,
+        -128
+      ],
+      "id": "207e2479-0c2a-4ea5-a6c8-0af45c6f9c86",
+      "name": "Gmail Trigger",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "G8VPuCFlNq8kUmrz",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "16kSdJJ0imPSq2A7gIhueuEvjwdcvjRaCMYGg-u2QdFs",
+          "mode": "list",
+          "cachedResultName": "tagging_samples_for_RAG",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/16kSdJJ0imPSq2A7gIhueuEvjwdcvjRaCMYGg-u2QdFs/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 67988996,
+          "mode": "list",
+          "cachedResultName": "tagging_sample",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/16kSdJJ0imPSq2A7gIhueuEvjwdcvjRaCMYGg-u2QdFs/edit#gid=67988996"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        368,
+        640
+      ],
+      "id": "1225b4f2-b8cf-42eb-9fb7-cfcc666d3186",
+      "name": "Get row(s) in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "bfHWXMv5Xz1SPYww",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Vector database initialization (manual first run)",
+        "height": 496,
+        "width": 928,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        80,
+        544
+      ],
+      "typeVersion": 1,
+      "id": "b4fe14bf-c1bc-4379-8e94-44243edb8e4b",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "content": "## Create embeddings for taxonomy knowledge base",
+        "height": 256,
+        "width": 368,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -320,
+        784
+      ],
+      "typeVersion": 1,
+      "id": "a6275b75-8599-4d76-b763-23f0ff61e180",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "content": "## Email ingestion and preprocessing\n",
+        "height": 464,
+        "width": 528,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -1376,
+        -240
+      ],
+      "typeVersion": 1,
+      "id": "1bf826f0-1e84-449c-9d2b-6e695f131e92",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "content": "## AI analysis using RAG classification",
+        "height": 544,
+        "width": 896,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -816,
+        -240
+      ],
+      "typeVersion": 1,
+      "id": "1ba270f2-5d61-455b-bf6d-c6a69873ff51",
+      "name": "Sticky Note4"
+    },
+    {
+      "parameters": {
+        "content": "## Store processed emails",
+        "height": 544,
+        "width": 384,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        112,
+        -240
+      ],
+      "typeVersion": 1,
+      "id": "7730e7aa-8796-4a28-9549-26f18c32a7e2",
+      "name": "Sticky Note5"
+    },
+    {
+      "parameters": {
+        "content": "## New Category/Subcategory?",
+        "height": 256,
+        "width": 352,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        560,
+        -112
+      ],
+      "typeVersion": 1,
+      "id": "3780afea-b0b3-43f3-aa63-70006cbfcdb2",
+      "name": "Sticky Note6"
+    },
+    {
+      "parameters": {
+        "content": "## Automatic taxonomy learning",
+        "height": 448,
+        "width": 864,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        960,
+        64
+      ],
+      "typeVersion": 1,
+      "id": "06d1fc9e-3843-452d-841b-c68592f3d7e6",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "content": "## Audio summary notification",
+        "height": 368,
+        "width": 864,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1664,
+        -320
+      ],
+      "typeVersion": 1,
+      "id": "38464f22-dd4b-4b0b-992d-3c66b1bb5190",
+      "name": "Sticky Note7"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        160,
+        640
+      ],
+      "id": "1dda4ca3-d7d0-4a49-bfb4-2c169af4f028",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=sender: {{ $json.sender }}\nemail: {{ $json.email }}\ndate: {{ $json.date }}\nsubject: {{ $json.subject }}\ncontent: {{ $json.content }}",
+        "options": {
+          "systemMessage": "=You are an email analysis, classification, and summarization assistant operating inside an automated workflow.\n\nYou will receive ONE incoming email object as input.\n\nYour task is to analyze the email and RETURN THE SAME OBJECT with additional structured fields appended.\n\n--------------------------------------------------\nPRIMARY OBJECTIVES\n--------------------------------------------------\n\n1. Summarize the email content in ONE short paragraph (maximum 3 sentences).\n\n2. Classify the email using semantic context retrieved from \"Simple Vector Store1\".\n\n3. The retrieved examples represent the OFFICIAL taxonomy and are the PRIMARY SOURCE OF TRUTH for categories and subcategories.\n\n4. Extract up to 5 meaningful keywords representing the main topics of the email.\n\n5. Provide a confidence score between 0 and 1 indicating classification certainty.\n\n--------------------------------------------------\nCLASSIFICATION RULES (STRICT)\n--------------------------------------------------\n\n- ALWAYS prefer categories and subcategories found in retrieved examples.\n- DO NOT invent new categories or subcategories unless no reasonable semantic match exists.\n- Retrieved examples have higher authority than general model knowledge.\n- If similarity is weak, still choose the closest existing category and LOWER the confidence score.\n- Only create a new category or subcategory when NO retrieved example reasonably matches the email topic.\n\nDecision priority order:\n1) Retrieved vector store examples (highest priority)\n2) Semantic meaning of the email\n3) General reasoning (last resort)\n\n--------------------------------------------------\nTAXONOMY CONSISTENCY CHECK (MANDATORY)\n--------------------------------------------------\n\nAfter selecting a category and subcategory:\n\n1. Compare the selected category against ALL categories present in the retrieved examples from \"Simple Vector Store1\".\n\n2. If the selected category DOES NOT appear in retrieved examples from knowledge_base and you generated new one:\n   set new_category = true\n   otherwise set new_category = false.\n\n3. If the category exists but the selected subcategory DOES NOT appear in retrieved examples from knowledge_base and you generated new one:\n   set new_subcategory = true\n   otherwise set new_subcategory = false.\n\n4. This decision MUST be based ONLY on retrieved examples, not on general knowledge.\n\n--------------------------------------------------\nCONFIDENCE SCORING\n--------------------------------------------------\n\n0.90–1.00 → strong semantic match with retrieved examples\n0.70–0.89 → clear topic with minor ambiguity\n0.50–0.69 → weak similarity but reasonable classification\n0.00–0.49 → uncertain classification\n\nLower confidence when retrieved similarity is weak or ambiguous.\n\n--------------------------------------------------\nOUTPUT REQUIREMENTS (CRITICAL)\n--------------------------------------------------\n\n- Output MUST be valid JSON ONLY.\n- DO NOT include markdown, explanations, comments, or extra text.\n- DO NOT remove, rename, or modify any existing input fields.\n- Preserve all original fields exactly as received.\n- Append ONLY the following fields:\n\n{\n  \"summary\": \"short paragraph summary\",\n  \"short_message\": \"1 long line summary\",\n  \"category\": \"main category\",\n  \"subcategory\": \"specific subcategory\",\n  \"keywords\": [\"keyword1\",\"keyword2\",\"keyword3\"],\n  \"confidence\": 0.0,\n  \"new_category\": false,\n  \"new_subcategory\": false\n}\n\n--------------------------------------------------\nNEW CATEGORY FLAGS\n--------------------------------------------------\n\n- new_category = true ONLY if the selected category is NOT present in retrieved examples.\n- new_subcategory = true ONLY if the category exists but the subcategory is NOT present in retrieved examples.\n\n--------------------------------------------------\nFINAL VALIDATION STEP (MANDATORY)\n--------------------------------------------------\n\nBefore responding, internally verify:\n\n✓ Output is valid JSON\n✓ No missing commas or trailing text\n✓ All original input fields remain unchanged\n✓ Exactly the required fields were appended\n✓ No additional fields were added\n✓ Boolean fields contain true or false values only\n✓ confidence is a number between 0 and 1\n\nIf validation fails, correct the output before responding."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        -496,
+        -128
+      ],
+      "id": "02fd56c8-d49e-4a31-8d00-6b44837a7dc4",
+      "name": "Analyze email with RAG agent"
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "messageId": "={{ $json.id }}",
+        "simple": false,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        -1168,
+        32
+      ],
+      "id": "93a4602e-b439-4998-b4f7-5552a14235b1",
+      "name": "Fetch full Gmail message",
+      "webhookId": "0fde2a18-bc05-49e0-9dfa-a6b7c590a963",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "G8VPuCFlNq8kUmrz",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "7e9eb4f0-4857-4400-aeb8-ed95125e521e",
+              "name": "id",
+              "value": "={{ $json.id }}",
+              "type": "string"
+            },
+            {
+              "id": "38b144e4-656d-455c-97a2-2940a2ef1664",
+              "name": "date",
+              "value": "={{ $json.date}}",
+              "type": "string"
+            },
+            {
+              "id": "c6783bdd-84ec-4b33-87d1-92d9abee0883",
+              "name": "sender",
+              "value": "={{ $json.from.value[0].name }}",
+              "type": "string"
+            },
+            {
+              "id": "6ea9a751-b591-4c48-ae73-b34957baf989",
+              "name": "email",
+              "value": "={{ $json.from.value[0].address }}",
+              "type": "string"
+            },
+            {
+              "id": "94764f32-b319-4402-94ba-3eb5f579f967",
+              "name": "subject",
+              "value": "={{ $json.subject }}",
+              "type": "string"
+            },
+            {
+              "id": "85dae6e6-27b9-4f50-b87a-54321fae5d61",
+              "name": "content",
+              "value": "={{ $json.html.removeTags() }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -1008,
+        -128
+      ],
+      "id": "52ebae61-2c71-4a4d-853b-2a960cc4ce7c",
+      "name": "Normalize email fields"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "81cda1ee-1de3-4532-8424-63af111b7e5e",
+              "name": "sender",
+              "value": "={{ $json.output.parseJson().sender}}",
+              "type": "string"
+            },
+            {
+              "id": "411d8ed7-b5a0-406b-8cbb-f13fcc2e0cb9",
+              "name": "email",
+              "value": "={{ $json.output.parseJson().email}}",
+              "type": "string"
+            },
+            {
+              "id": "91e1e7ed-4d7b-4f7b-8ce6-256f7534ddaa",
+              "name": "date",
+              "value": "={{ $json.output.parseJson().date}}",
+              "type": "string"
+            },
+            {
+              "id": "339af5c2-4a0a-49a8-9a95-c30038b3c449",
+              "name": "subject",
+              "value": "={{ $json.output.parseJson().subject}}",
+              "type": "string"
+            },
+            {
+              "id": "4e1e6c3f-6db6-451b-90b3-567860a41dca",
+              "name": "content",
+              "value": "={{ $json.output.parseJson().summary}}",
+              "type": "string"
+            },
+            {
+              "id": "01e3df72-a9d8-4e3f-ba6b-34e891a7cc4f",
+              "name": "short message",
+              "value": "={{ $json.output.parseJson().short_message}}",
+              "type": "string"
+            },
+            {
+              "id": "cbfb9eb0-f132-4b28-8523-b67a58f1a640",
+              "name": "category",
+              "value": "={{ $json.output.parseJson().category}} ",
+              "type": "string"
+            },
+            {
+              "id": "2d7eaa48-8188-481c-b97a-ca33512f8f9a",
+              "name": "subcategory",
+              "value": "={{ $json.output.parseJson().subcategory}}",
+              "type": "string"
+            },
+            {
+              "id": "20f7f724-4b6a-46a5-9f1e-1d27a477c03c",
+              "name": "keyword",
+              "value": "={{ $json.output.parseJson().keywords.join()}}",
+              "type": "string"
+            },
+            {
+              "id": "2d8fc5fa-83a5-49ae-a47c-0cb720cc4b72",
+              "name": "confidence",
+              "value": "={{ $json.output.parseJson().confidence}}",
+              "type": "string"
+            },
+            {
+              "id": "a3f2f93c-91cf-4b72-b0f4-f0656114f4d7",
+              "name": "new category",
+              "value": "={{ $json.output.parseJson().new_category}}",
+              "type": "string"
+            },
+            {
+              "id": "f0671f31-6cee-49ba-b57f-272901b27555",
+              "name": "new subcategory",
+              "value": "={{ $json.output.parseJson().new_subcategory}}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        160,
+        32
+      ],
+      "id": "27143409-5428-4f7c-adb8-81793455dac6",
+      "name": "Parse AI analysis result"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "183Hr0qGVs5sLqoWi_69uRPItvhy_BrdSjgQ8nI9OCz0",
+          "mode": "list",
+          "cachedResultName": "Untitled spreadsheet",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/183Hr0qGVs5sLqoWi_69uRPItvhy_BrdSjgQ8nI9OCz0/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "email",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/183Hr0qGVs5sLqoWi_69uRPItvhy_BrdSjgQ8nI9OCz0/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "date": "={{ $json.date }}",
+            "subject": "={{ $json.subject }}",
+            "summarized text": "={{ $json.content }}",
+            "email": "={{ $json.email }}",
+            "name": "={{ $json.sender }}",
+            "category": "={{ $json.category }}",
+            "subcategory": "={{ $json.subcategory }}",
+            "keywords": "={{ $json.keyword }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "date",
+              "displayName": "date",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "email",
+              "displayName": "email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "name",
+              "displayName": "name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "subject",
+              "displayName": "subject",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "summarized text",
+              "displayName": "summarized text",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "category",
+              "displayName": "category",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "subcategory",
+              "displayName": "subcategory",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "keywords",
+              "displayName": "keywords",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        336,
+        -16
+      ],
+      "id": "48ef6c0c-bf62-4c3f-bb93-4780b6f13792",
+      "name": "Store processed email",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "bfHWXMv5Xz1SPYww",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "550b3cd9-0fb1-4810-9037-2a56b630779c",
+              "leftValue": "={{ $('Parse AI analysis result').item.json[\"new category\"] }}",
+              "rightValue": "true",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            },
+            {
+              "id": "66af56bc-574b-4565-bfad-75577917b8dc",
+              "leftValue": "={{ $('Parse AI analysis result').item.json[\"new subcategory\"] }}",
+              "rightValue": "true",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "or"
+        },
+        "options": {
+          "ignoreCase": true
+        }
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        672,
+        -16
+      ],
+      "id": "a29d85ca-cbdf-48d8-9b35-da5884a1ecc7",
+      "name": "Check for new taxonomy items"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "16kSdJJ0imPSq2A7gIhueuEvjwdcvjRaCMYGg-u2QdFs",
+          "mode": "list",
+          "cachedResultName": "tagging_samples_for_RAG",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/16kSdJJ0imPSq2A7gIhueuEvjwdcvjRaCMYGg-u2QdFs/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 67988996,
+          "mode": "list",
+          "cachedResultName": "tagging_sample",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/16kSdJJ0imPSq2A7gIhueuEvjwdcvjRaCMYGg-u2QdFs/edit#gid=67988996"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1072,
+        176
+      ],
+      "id": "70fd7ea2-3592-4b1d-8140-d0a31467517c",
+      "name": "Load taxonomy dataset",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "bfHWXMv5Xz1SPYww",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "language": "pythonNative",
+        "pythonCode": "ids = [item[\"json\"][\"id\"] for item in _items]\n\n# Get the maximum id\nmax_id = max(ids)\n\n\n# Return result\nreturn [{\n    \"json\": {\n        \"max_id\": max_id\n    }\n}]\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1264,
+        304
+      ],
+      "id": "45962298-3cf2-40df-af6b-f5b970e1e3c1",
+      "name": "Get next taxonomy ID"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "16kSdJJ0imPSq2A7gIhueuEvjwdcvjRaCMYGg-u2QdFs",
+          "mode": "list",
+          "cachedResultName": "tagging_samples_for_RAG",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/16kSdJJ0imPSq2A7gIhueuEvjwdcvjRaCMYGg-u2QdFs/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 67988996,
+          "mode": "list",
+          "cachedResultName": "tagging_sample",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/16kSdJJ0imPSq2A7gIhueuEvjwdcvjRaCMYGg-u2QdFs/edit#gid=67988996"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "id": "={{ $json.max_id + 1}}",
+            "subject": "={{ $('Parse AI analysis result').first().json.subject }}",
+            "email_text": "={{ $('Parse AI analysis result').first().json['short message'] }}",
+            "category": "={{ $('Parse AI analysis result').first().json.category }}",
+            "subcategory": "={{ $('Parse AI analysis result').first().json.subcategory }}",
+            "keywords": "={{ $('Parse AI analysis result').first().json.keyword }}"
+          },
+          "matchingColumns": [
+            "id"
+          ],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": false,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "subject",
+              "displayName": "subject",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "email_text",
+              "displayName": "email_text",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "category",
+              "displayName": "category",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "subcategory",
+              "displayName": "subcategory",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "keywords",
+              "displayName": "keywords",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1456,
+        176
+      ],
+      "id": "ba43f9e7-5cf6-4c08-938f-9d606dbcbf70",
+      "name": "Append new taxonomy entry",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "bfHWXMv5Xz1SPYww",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "[YOUR_CHAT_ID]",
+        "text": "=New category/subcategory added:\n{{ $json.category }} / {{ $json.subcategory }}",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1664,
+        304
+      ],
+      "id": "8c551b81-7839-42b8-a525-51f2d549e92c",
+      "name": "Notify admin about taxonomy update",
+      "webhookId": "8aa607a9-3821-4983-84c8-cd43b4d5469e",
+      "credentials": {
+        "telegramApi": {
+          "id": "ULUypqvZ44kAxk8F",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "audio",
+        "input": "={{ $('Store processed email').first().json['summarized text'] }}",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 2.1,
+      "position": [
+        1888,
+        -176
+      ],
+      "id": "6282f451-1235-4aa3-a3d3-086bc70a55b4",
+      "name": "Generate audio summary",
+      "credentials": {
+        "openAiApi": {
+          "id": "PsddRNyQpDLO5nLr",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "sendAudio",
+        "chatId": "=[YOUR_CHAT_ID]",
+        "binaryData": true,
+        "additionalFields": {
+          "caption": "=👤 {{ $('Normalize email fields').first().json.sender }}\n{{ $('Normalize email fields').first().json.date .toDateTime().format('📅 yyyy-MM-dd ⏰ hh:mm:ss')}}\n\n📜 {{ $('Normalize email fields').first().json.subject }}",
+          "fileName": "email bite"
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        2224,
+        -176
+      ],
+      "id": "6df2007e-954c-4bbe-81ec-5872e6170213",
+      "name": "Send audio summary to Telegram",
+      "webhookId": "541e2eef-6ebf-4ce8-9b0b-1bbc8165e1e9",
+      "credentials": {
+        "telegramApi": {
+          "id": "ULUypqvZ44kAxk8F",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "insert",
+        "memoryKey": {
+          "__rl": true,
+          "value": "email_tagging",
+          "mode": "list",
+          "cachedResultName": "email_tagging"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStoreInMemory",
+      "typeVersion": 1.3,
+      "position": [
+        560,
+        640
+      ],
+      "id": "eb252b88-4336-49e5-8c16-d6b5c7637f72",
+      "name": "Vector store — taxonomy index"
+    },
+    {
+      "parameters": {
+        "mode": "retrieve-as-tool",
+        "toolDescription": "knowledgebase for email content category and subcategory.",
+        "memoryKey": {
+          "__rl": true,
+          "mode": "list",
+          "value": "email_tagging"
+        },
+        "topK": 1
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStoreInMemory",
+      "typeVersion": 1.3,
+      "position": [
+        -304,
+        160
+      ],
+      "id": "fee89aa8-2981-400e-b415-f5ce8141550d",
+      "name": "Vector store retriever (RAG tool)"
+    },
+    {
+      "parameters": {
+        "jsonMode": "expressionData",
+        "jsonData": "={{ $('Get row(s) in sheet').item.json.subject +\"\\n\"+$('Get row(s) in sheet').item.json.email_text}}",
+        "options": {
+          "metadata": {
+            "metadataValues": [
+              {
+                "name": "category",
+                "value": "={{ $('Get row(s) in sheet').item.json.category }}"
+              },
+              {
+                "name": "subcategory",
+                "value": "={{ $('Get row(s) in sheet').item.json.subcategory }}"
+              }
+            ]
+          }
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+      "typeVersion": 1.1,
+      "position": [
+        608,
+        896
+      ],
+      "id": "8abed336-a6a4-4dc4-b7ee-f6d1d481fc78",
+      "name": "Prepare taxonomy documents"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        -176,
+        896
+      ],
+      "id": "b23850e5-0c9d-4e5b-8fef-f2ec4dc82cf6",
+      "name": "Create embeddings (OpenAI)",
+      "credentials": {
+        "openAiApi": {
+          "id": "PsddRNyQpDLO5nLr",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## How it works\n\nThis workflow automatically analyzes incoming Gmail messages using a Retrieval-Augmented Generation (RAG) approach. When a new email arrives, the workflow extracts and normalizes its content, then sends it to an AI agent powered by an OpenAI model.\n\nThe agent retrieves examples from a vector database built from a Google Sheets taxonomy dataset. These examples act as the source of truth for email categories and subcategories. Using this context, the AI summarizes the email, assigns a category and subcategory, extracts keywords, and calculates a confidence score.\n\nProcessed emails are stored in a Google Sheet for tracking and analytics. If the AI detects a previously unseen category or subcategory, the workflow automatically expands the taxonomy dataset and notifies the administrator. Optionally, an audio version of the email summary is generated and sent via Telegram.\n\n## Setup steps\n\n1. Connect Gmail credentials for the trigger node.\n2. Connect OpenAI credentials for chat, embeddings, and audio generation.\n3. Connect Google Sheets credentials and duplicate the provided sheets.\n4. Replace Telegram chat IDs with your own.\n5. Run the workflow once manually to populate the vector store before activating it.\n\nAfter setup, the workflow continuously learns and improves email classification over time.",
+        "height": 592,
+        "width": 704
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -1216,
+        400
+      ],
+      "id": "f5a501d4-a09d-4d21-8a56-7af4b33aa7a9",
+      "name": "Sticky Note8"
+    }
+  ],
+  "connections": {
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Analyze email with RAG agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gmail Trigger": {
+      "main": [
+        [
+          {
+            "node": "Fetch full Gmail message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet": {
+      "main": [
+        [
+          {
+            "node": "Vector store — taxonomy index",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Analyze email with RAG agent": {
+      "main": [
+        [
+          {
+            "node": "Parse AI analysis result",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch full Gmail message": {
+      "main": [
+        [
+          {
+            "node": "Normalize email fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Normalize email fields": {
+      "main": [
+        [
+          {
+            "node": "Analyze email with RAG agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse AI analysis result": {
+      "main": [
+        [
+          {
+            "node": "Store processed email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Store processed email": {
+      "main": [
+        [
+          {
+            "node": "Check for new taxonomy items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check for new taxonomy items": {
+      "main": [
+        [
+          {
+            "node": "Load taxonomy dataset",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Generate audio summary",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Load taxonomy dataset": {
+      "main": [
+        [
+          {
+            "node": "Get next taxonomy ID",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get next taxonomy ID": {
+      "main": [
+        [
+          {
+            "node": "Append new taxonomy entry",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Append new taxonomy entry": {
+      "main": [
+        [
+          {
+            "node": "Notify admin about taxonomy update",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Notify admin about taxonomy update": {
+      "main": [
+        [
+          {
+            "node": "Generate audio summary",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Get row(s) in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate audio summary": {
+      "main": [
+        [
+          {
+            "node": "Send audio summary to Telegram",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Vector store retriever (RAG tool)": {
+      "ai_tool": [
+        [
+          {
+            "node": "Analyze email with RAG agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare taxonomy documents": {
+      "ai_document": [
+        [
+          {
+            "node": "Vector store — taxonomy index",
+            "type": "ai_document",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create embeddings (OpenAI)": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Vector store — taxonomy index",
+            "type": "ai_embedding",
+            "index": 0
+          },
+          {
+            "node": "Vector store retriever (RAG tool)",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "7f5f6eba79216fe73b6cec06e9bc0588a7296560af9073646e4476001985e797"
+  }
+}
