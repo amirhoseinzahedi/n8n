@@ -5,7 +5,15 @@ This workflow automatically reads incoming Gmail messages, analyzes them using A
 classification system (RAG), organizes emails into structured categories, stores results in Google Sheets,
 and even generates an audio summary sent directly to Telegram.
 </p>
-<img src="simple-architecture.png" width="800">
+<table>
+  <tr>
+    <td>
+      <img src="simple-architecture.png" width="400">
+    </td>
+      <img src="simple-architecture.png" width="400">
+    <td>
+  </tr>
+</table>
 <hr>
 
 <h2>⚙️ How It Works</h2>
