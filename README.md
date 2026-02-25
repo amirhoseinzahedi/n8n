@@ -1,4 +1,4 @@
-<h2>📧 AI Email Intelligence — Summarize, Classify & Learn with RAG</h2>
+<h2>📧 Analyze, classify, and summarize emails using RAG with automatic taxonomy learning</h2>
 
 <p>
 This workflow automatically reads incoming Gmail messages, analyzes them using AI with a retrieval-augmented
