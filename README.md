@@ -10,8 +10,9 @@ and even generates an audio summary sent directly to Telegram.
     <td>
       <img src="simple-architecture.png" width="400">
     </td>
-      <img src="simple-architecture.png" width="400">
     <td>
+      <img src="workflow-screenshot.png" width="400">
+    </td>
   </tr>
 </table>
 <hr>
